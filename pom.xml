@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.spbstu.competition.punters</groupId>
-    <artifactId>average_joe</artifactId>
+    <artifactId>random_bot</artifactId>
     <version>0.0.0.1</version>
 
     <properties>

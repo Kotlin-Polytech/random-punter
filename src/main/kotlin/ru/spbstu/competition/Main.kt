@@ -21,7 +21,7 @@ object Arguments {
 fun main(args: Array<String>) {
     Arguments.use(args)
 
-    println("Hi, I am Average Joe, the ultimate punter!")
+    println("Random bot online")
 
     // Протокол обмена с сервером
     val protocol = Protocol(Arguments.url, Arguments.port)
@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
     // Джо очень умный чувак, вот его ум
     val intellect = Intellect(gameState, protocol)
 
-    protocol.handShake("Average Joe, yo!")
+    protocol.handShake("Random Bot")
     val setupData = protocol.setup()
     gameState.init(setupData)
 
@@ -44,11 +44,11 @@ fun main(args: Array<String>) {
             is GameResult -> {
                 println("The game is over!")
                 val myScore = message.stop.scores[protocol.myId]
-                println("Joe scored ${myScore.score} points!")
+                println("Score: ${myScore.score}")
                 break@gameloop
             }
             is Timeout -> {
-                println("Joe too slow =(")
+                println("Timeout")
             }
             is GameTurnMessage -> {
                 for(move in message.move.moves) {
@@ -60,8 +60,6 @@ fun main(args: Array<String>) {
             }
         }
 
-        println("Joe thinkin'")
         intellect.makeMove()
-        println("Joe genius!")
     }
 }
